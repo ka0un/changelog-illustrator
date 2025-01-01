@@ -24,31 +24,79 @@ const ChangelogDetails = () => {
         <ScrollArea className="h-[60vh] w-full rounded-md border p-4">
           <div className="space-y-8">
             <ChangelogSection
-              title="area"
-              beforeChange="Kanagawa, Shizuoka"
-              addedItems="Tokyo, Chiba, Saitama"
-              removedItems="Kanagawa, Shizuoka"
+              title="Email"
+              beforeChange="john@example.com"
+              addedItems="kasun@gmail.com"
+              removedItems="john@example.com"
             />
             <ChangelogSection
-              title="maker"
-              beforeChange="Subaru"
-              alternativeChoices="Toyota, Honda, Nissan"
-              addedItems="Toyota, Honda, Nissan"
-              removedItems="Subaru"
+              title="Area"
+              beforeChange="Tokyo: Shibuya-ku"
+              addedItems="Hokkaido: Chuo-ku, Sapporo"
+              removedItems="Tokyo: Shibuya-ku"
             />
             <ChangelogSection
-              title="Models"
-              beforeChange="Vitz, Fit"
-              alternativeChoices="Prius, Aqua"
-              addedItems="Prius, Aqua"
-              removedItems="Vitz, Fit"
+              title="General OK Maker"
+              beforeChange="Toyota, Honda"
+              addedItems="Subaru, Mazda, Nissan"
+              removedItems="Toyota, Honda"
+              type="ok"
             />
             <ChangelogSection
-              title="Body"
-              beforeChange="Mini"
-              alternativeChoices="Sedans, SUVs"
-              addedItems="Sedans, SUVs"
-              removedItems="Mini"
+              title="General OK Body"
+              beforeChange="Sedan"
+              addedItems="Mini, SUV, Compact"
+              removedItems="Sedan"
+              type="ok"
+            />
+            <ChangelogSection
+              title="General OK Models"
+              beforeChange="Corolla: Toyota"
+              addedItems="Prius: Toyota, Fit: Honda, Leaf: Nissan"
+              removedItems="Corolla: Toyota"
+              type="ok"
+            />
+            <ChangelogSection
+              title="General NG Maker"
+              beforeChange="Mitsubishi"
+              addedItems="Subaru, Isuzu"
+              removedItems="Mitsubishi"
+              type="ng"
+            />
+            <ChangelogSection
+              title="General NG Body"
+              beforeChange="Van"
+              addedItems="Mini, Truck"
+              removedItems="Van"
+              type="ng"
+            />
+            <ChangelogSection
+              title="General NG Models"
+              beforeChange="March: Nissan"
+              addedItems="Prius: Toyota, Civic: Honda"
+              removedItems="March: Nissan"
+              type="ng"
+            />
+            <ChangelogSection
+              title="Special OK Maker"
+              beforeChange="Lexus"
+              addedItems="Subaru, Toyota Premium"
+              removedItems="Lexus"
+              type="ok"
+            />
+            <ChangelogSection
+              title="Special OK Body"
+              beforeChange="Coupe"
+              addedItems="Mini, Sports"
+              removedItems="Coupe"
+              type="ok"
+            />
+            <ChangelogSection
+              title="Special OK Models"
+              beforeChange="Crown: Toyota"
+              addedItems="Prius: Toyota, WRX: Subaru"
+              removedItems="Crown: Toyota"
+              type="ok"
             />
           </div>
         </ScrollArea>

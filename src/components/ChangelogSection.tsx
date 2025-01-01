@@ -3,37 +3,38 @@ import React from 'react';
 interface ChangelogSectionProps {
   title: string;
   beforeChange: string;
-  alternativeChoices?: string;
   addedItems: string;
   removedItems: string;
+  type?: 'ok' | 'ng' | 'neutral';
 }
 
 const ChangelogSection = ({
   title,
   beforeChange,
-  alternativeChoices,
   addedItems,
   removedItems,
+  type = 'neutral'
 }: ChangelogSectionProps) => {
+  const getTitleColor = () => {
+    switch (type) {
+      case 'ok':
+        return 'text-green-700';
+      case 'ng':
+        return 'text-red-700';
+      default:
+        return 'text-gray-700';
+    }
+  };
+
   return (
     <div className="border-b pb-8">
-      <h3 className="font-medium text-lg mb-6">{title}</h3>
+      <h3 className={`font-medium text-lg mb-6 ${getTitleColor()}`}>{title}</h3>
       <div className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div>
-            <p className="text-sm text-muted-foreground mb-2">Choices before the change:</p>
-            <div className="bg-gray-50 p-3 rounded">
-              <p className="text-gray-700">{beforeChange}</p>
-            </div>
+        <div className="mb-6">
+          <p className="text-sm text-muted-foreground mb-2">Choices before the change:</p>
+          <div className="bg-gray-50 p-3 rounded">
+            <p className="text-gray-700">{beforeChange}</p>
           </div>
-          {alternativeChoices && (
-            <div>
-              <p className="text-sm text-muted-foreground mb-2">Alternative choices:</p>
-              <div className="bg-gray-50 p-3 rounded">
-                <p className="text-gray-700">{alternativeChoices}</p>
-              </div>
-            </div>
-          )}
         </div>
         <div>
           <p className="text-sm text-muted-foreground mb-2">Added Items:</p>

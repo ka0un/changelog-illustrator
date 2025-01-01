@@ -15,20 +15,9 @@ const ChangelogSection = ({
   removedItems,
   type = 'neutral'
 }: ChangelogSectionProps) => {
-  const getTitleColor = () => {
-    switch (type) {
-      case 'ok':
-        return 'text-green-700';
-      case 'ng':
-        return 'text-red-700';
-      default:
-        return 'text-gray-700';
-    }
-  };
-
   return (
     <div className="border-b pb-8">
-      <h3 className={`font-medium text-lg mb-6 ${getTitleColor()}`}>{title}</h3>
+      <h3 className="font-medium text-lg mb-6">{title}</h3>
       <div className="space-y-6">
         <div className="mb-6">
           <p className="text-sm text-muted-foreground mb-2">Choices before the change:</p>
